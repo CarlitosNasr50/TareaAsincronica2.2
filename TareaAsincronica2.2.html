@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC</title>
+</head>
+<body>
+
+    <h1>Calcule su IMC!</h1>
+
+    Ingresar Estatura (mt.): <input type="text" id="v1" name="v1"> <br><br>
+    Ingresar Peso (kg.): <input type="text" id="v2" name="v2"><br><br>
+
+    <button onclick="calcular();">IMC</button><br>
+    <p id="imc"></p>
+
+    <script type="text/javascript">
+
+        function calcular(){
+            let v1=document.getElementById('v1').value;
+            let v2=document.getElementById('v2').value;
+
+            let i1=parseFloat(v1,10);
+            let i2=parseFloat(v2,10);
+
+            let res="";
+            let imc= (i2/(i1*i1));
+
+            if(imc <=18.5) {
+                res="Flaco!!";
+            }else if(imc <=24.9) {
+                res="Estás Bien!!";
+            }else if(imc <=29.9) {
+                res="Algo Gordito!!";
+            }else{
+                res="Estás Gordo!!!"
+            }
+            document.getElementById('imc').innerHTML=res;
+        }
+
+    </script>
+
+</body>
+</html>
